@@ -1,0 +1,25 @@
+id="m6e2l8"
+# Virtual Environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# SQLite database
+db.sqlite3
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Node modules
+node_modules/
+
+# Static files
+staticfiles/
+
+# Media files
+media/
