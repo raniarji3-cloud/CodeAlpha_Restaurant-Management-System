@@ -1,4 +1,3 @@
-id="m6e2l8"
 # Virtual Environment
 venv/
 
@@ -6,20 +5,23 @@ venv/
 __pycache__/
 *.pyc
 
-# SQLite database
+# Database
 db.sqlite3
 
-# VS Code
-.vscode/
+# Logs
+*.log
 
 # Environment variables
 .env
 
-# Node modules
+# VS Code
+.vscode/
+
+# Node (if used)
 node_modules/
 
 # Static files
 staticfiles/
 
-# Media files
+# Media uploads
 media/

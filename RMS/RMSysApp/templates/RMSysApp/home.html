@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurant Management System</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body{
+            background-color: #fffaf3;
+        }
+
+        .navbar{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo{
+            font-size: 32px;
+            font-weight: bold;
+            color: darkorange;
+        }
+
+        .nav-links a{
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover{
+            color: darkorange;
+        }
+
+        .hero{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px;
+        }
+
+        .hero-text{
+            width: 50%;
+        }
+
+        .hero-text h1{
+            font-size: 60px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .hero-text span{
+            color: darkorange;
+        }
+
+        .hero-text p{
+            font-size: 20px;
+            color: gray;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .buttons a{
+            text-decoration: none;
+            padding: 15px 25px;
+            margin-right: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .menu-btn{
+            background-color: darkorange;
+            color: white;
+        }
+
+        .reserve-btn{
+            border: 2px solid darkorange;
+            color: darkorange;
+        }
+
+        .buttons a:hover{
+            opacity: 0.8;
+        }
+
+        .hero-image img{
+            width: 500px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+        }
+
+        footer{
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">🍽 Foodie</div>
+
+        <div class="nav-links">
+
+            <a href="/home/">Home</a>
+
+            <a href="/menu-page/">Menu</a>
+
+            <a href="/reservation-page/">Reservations</a>
+
+            <a href="/cart/">Cart</a>
+
+            {% if user.is_authenticated %}
+
+                <a href="/logout/">Logout</a>
+
+            {% else %}
+
+                <a href="/">Login</a>
+
+                <a href="/signup/">Signup</a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <div class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Enjoy Delicious <span>Food</span>
+            </h1>
+
+            <p>
+                Welcome to our Restaurant Management System.
+                Order food, reserve tables, and enjoy delicious meals with easy service.
+            </p>
+
+            <div class="buttons">
+
+                <a href="/menu-page/" class="menu-btn">
+                    View Menu
+                </a>
+
+                <a href="/reservation-page/" class="reserve-btn">
+                    Reserve Table
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        © 2026 Restaurant Management System | Developed by Rani
+
+    </footer>
+
+</body>
+
+</html>

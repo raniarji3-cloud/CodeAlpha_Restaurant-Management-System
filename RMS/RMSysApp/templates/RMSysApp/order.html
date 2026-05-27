@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Order Detail</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+            background:#fffaf3;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            padding:20px 80px;
+
+            background:white;
+
+            box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo{
+
+            font-size:35px;
+            font-weight:bold;
+
+            color:darkorange;
+        }
+
+        .nav-links{
+
+            display:flex;
+            gap:30px;
+        }
+
+        .nav-links a{
+
+            text-decoration:none;
+
+            color:black;
+
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        .nav-links a:hover{
+            color:darkorange;
+        }
+
+        /* ORDER SECTION */
+
+        .container{
+
+            width:70%;
+
+            margin:auto;
+
+            margin-top:50px;
+        }
+
+        .title{
+
+            text-align:center;
+
+            font-size:50px;
+
+            margin-bottom:20px;
+        }
+
+        .customer{
+
+            text-align:center;
+
+            font-size:25px;
+
+            margin-bottom:40px;
+
+            color:#444;
+        }
+
+        .order-card{
+
+            background:white;
+
+            border-radius:20px;
+
+            padding:20px;
+
+            margin-bottom:20px;
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .left{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:20px;
+        }
+
+        .left img{
+
+            width:130px;
+            height:130px;
+
+            border-radius:20px;
+
+            object-fit:cover;
+        }
+
+        .food-details h2{
+
+            font-size:32px;
+
+            margin-bottom:10px;
+        }
+
+        .food-details p{
+
+            font-size:20px;
+
+            color:gray;
+        }
+
+        .price{
+
+            font-size:35px;
+
+            font-weight:bold;
+
+            color:darkorange;
+        }
+
+        .total{
+
+            text-align:center;
+
+            font-size:45px;
+
+            font-weight:bold;
+
+            margin-top:40px;
+
+            color:darkorange;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            🍽 Foodie
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/home/">Home</a>
+
+            <a href="/menu-page/">Menu</a>
+
+            <a href="/cart/">🛒 Cart</a>
+
+            {% if user.is_authenticated %}
+
+                <a href="/logout/">Logout</a>
+
+            {% else %}
+
+                <a href="/">Login</a>
+
+                <a href="/signup/">Signup</a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- ORDER SECTION -->
+
+    <div class="container">
+
+        <div class="title">
+            Your Order 🍔
+        </div>
+
+        <div class="customer">
+            Customer: {{ order.customer_name }}
+        </div>
+
+        {% for i in items %}
+
+        <div class="order-card">
+
+            <div class="left">
+
+                <img src="/static/RMSysApp/images/{{ i.menu_item.name }}.jpg">
+
+                <div class="food-details">
+
+                    <h2>{{ i.menu_item.name }}</h2>
+
+                    <p>Quantity: {{ i.quantity }}</p>
+
+                </div>
+
+            </div>
+
+            <div class="price">
+
+                ₹ {{ i.get_total_price }}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="total">
+            Total: ₹ {{ order.total_amount }}
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: restaurant-management-system
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn RMS.wsgi:application"

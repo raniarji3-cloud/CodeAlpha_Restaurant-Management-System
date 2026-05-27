@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Foodie</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+
+            background-size:cover;
+            background-position:center;
+        }
+
+        .login-box{
+
+            width:380px;
+            padding:40px;
+
+            background:rgba(255,255,255,0.15);
+
+            backdrop-filter:blur(12px);
+
+            border-radius:20px;
+
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+
+            text-align:center;
+
+            color:white;
+        }
+
+        .login-box h1{
+            margin-bottom:30px;
+            font-size:40px;
+        }
+
+        input{
+
+            width:100%;
+            padding:15px;
+
+            margin:12px 0;
+
+            border:none;
+
+            border-radius:10px;
+
+            outline:none;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:15px;
+
+            border:none;
+
+            background:darkorange;
+
+            color:white;
+
+            font-size:18px;
+
+            border-radius:10px;
+
+            cursor:pointer;
+
+            margin-top:10px;
+        }
+
+        button:hover{
+            opacity:0.9;
+        }
+
+        a{
+            color:white;
+            text-decoration:none;
+        }
+
+        p{
+            margin-top:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <h1>🍽 Foodie</h1>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Username">
+
+            <input type="password" name="password" placeholder="Password">
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p>
+            Don't have account?
+            <a href="/signup/">Signup</a>
+        </p>
+
+    </div>
+
+</body>
+</html>

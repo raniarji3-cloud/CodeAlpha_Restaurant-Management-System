@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservations - Foodie</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body{
+            background-color: #fffaf3;
+        }
+
+        /* NAVBAR */
+        .navbar{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo{
+            font-size: 32px;
+            font-weight: bold;
+            color: darkorange;
+        }
+
+        .nav-links a{
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover{
+            color: darkorange;
+        }
+
+        h1{
+            text-align: center;
+            margin: 40px 0;
+            color: #222;
+        }
+
+        h1 span{
+            color: darkorange;
+        }
+
+        /* FORM */
+        .form-container{
+            width: 40%;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        input, select, textarea{
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button{
+            width: 100%;
+            padding: 12px;
+            background-color: darkorange;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover{
+            opacity: 0.85;
+        }
+
+        footer{
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .note{
+            font-size: 12px;
+            color: gray;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">🍽 Foodie</div>
+        <div class="nav-links">
+            <a href="/home/">Home</a>
+            <a href="/menu-page/">Menu</a>
+            <a href="/reservation-page/">Reservations</a>
+            <a href="/cart/">Cart</a>
+
+            {% if user.is_authenticated %}
+
+                <a href="/logout/">Logout</a>
+
+            {% else %}
+
+                <a href="/">Login</a>
+
+                <a href="/signup/">Signup</a>
+
+            {% endif %}
+        </div>
+    </div>
+
+    <h1>Add <span>Reservation</span></h1>
+
+    <div class="form-container">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- MATCH BACKEND FIELD -->
+            <input type="text" name="customer_name" placeholder="Customer Name" required>
+
+            <!-- TABLE FIELD -->
+            <input type="text" name="table" placeholder="Table (e.g. T1, T2, VIP-1)" required>
+
+            <!-- DATE -->
+            <label>Reservation Date:</label>
+            <input type="date" name="date" required>
+
+            <!-- TIME -->
+            <label>Reservation Time:</label>
+            <input type="time" name="time" required>
+
+            <!-- NOTE -->
+            <textarea name="note" placeholder="Note (optional)"></textarea>
+
+            <p class="note">
+                You are 5.5 hours ahead of server time.
+            </p>
+
+            <button type="submit">Add Reservation</button>
+
+        </form>
+
+    </div>
+
+    <footer>
+        © 2026 Restaurant Management System | Developed by Rani
+    </footer>
+
+</body>
+
+</html>
