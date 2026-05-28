@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -228,9 +229,11 @@
 
     <div class="left">
 
-        <!-- YOUR STATIC IMAGES -->
-
-        <img src="/static/RMSysApp/images/{{ i.item.name }}.jpg">
+        {% if i.item.image %}
+            <img src="{% static i.item.image %}" alt="{{ i.item.name }}">
+        {% else %}
+            <img src="{% static 'RMSysApp/images/burger.jpg' %}" alt="{{ i.item.name }}">
+        {% endif %}
 
         <div class="food-details">
 
