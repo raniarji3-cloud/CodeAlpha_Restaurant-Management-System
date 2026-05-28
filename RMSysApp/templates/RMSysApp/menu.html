@@ -180,7 +180,11 @@
 
         {% for item in items %}
         <div class="card">
-            <img src="{% static 'RMSysApp/images/' %}{{ item.name|lower|slugify }}.jpg">
+            {% if item.image %}
+                <img src="{% static item.image %}" alt="{{ item.name }}">
+            {% else %}
+                <img src="{% static 'RMSysApp/images/burger.jpg' %}" alt="{{ item.name }}">
+            {% endif %}
 
             <div class="card-content">
                 <h2>{{ item.name }}</h2>
@@ -207,6 +211,11 @@
                     <button>Add to Cart</button>
                 </a>
             </div>
+        </div>
+        {% empty %}
+        <div class="empty-menu">
+            <h2>Menu items are being prepared.</h2>
+            <p>Please run migrations or add dishes from the admin panel.</p>
         </div>
         {% endfor %}
 
