@@ -171,7 +171,8 @@ python manage.py runserver
 Then open:
 
 http://127.0.0.1:8000/
-📋 Requirements
+
+##📋 Requirements
 
 Before running the project, make sure the following are installed:
 
@@ -181,14 +182,8 @@ Git
 A modern web browser
 Internet connection for installing dependencies
 
-All project-specific Python dependencies are available in:
 
-requirements.txt
-📄 License
-
-This project was developed for educational, portfolio, and project demonstration purposes.
-
-👩‍💻 Author
+##👩‍💻 Author
 Rani Arji
 
 B.Tech Computer Science & Engineering
