@@ -174,25 +174,19 @@ http://127.0.0.1:8000/
 
 ##📋 Requirements
 
-Before running the project, make sure the following are installed:
-
-Python
-pip
-Git
-A modern web browser
-Internet connection for installing dependencies
+**Python
+**pip
+**Git
+**A modern web browser
+**Internet connection for installing dependencies
 
 
 ##👩‍💻 Author
+
 Rani Arji
 
 B.Tech Computer Science & Engineering
 
 Full-Stack Django Developer
-
-Connect with me
-💻 GitHub: Your GitHub Profile
-💼 LinkedIn: Your LinkedIn Profile
-⭐ Support
 
 If you found this project interesting or useful, consider giving the repository a ⭐ on GitHub.
