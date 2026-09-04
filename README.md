@@ -172,14 +172,6 @@ Then open:
 
 http://127.0.0.1:8000/
 
-##📋 Requirements
-
-**Python
-**pip
-**Git
-**A modern web browser
-**Internet connection for installing dependencies
-
 
 ##👩‍💻 Author
 
